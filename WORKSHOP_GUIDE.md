@@ -1,13 +1,13 @@
-### Scala workshop: Build a simple rest stocks app.
+# Scala workshop: Build a simple rest stocks app.
 
-#####Installation
+##Installation
 Follow the instructions of the README file to prepare your environment.
 
-####What are we implementing? 
+##What are we implementing? 
 As a demo case ...
 
-####PART  1 
-##### Explaining project structure 
+##PART  1 
+### Explaining project structure 
 * Build process SBT
 * Idea scala support:
 
@@ -20,7 +20,7 @@ Run main| _ctrl+shift+R_
 Stop main | _cmd+F2_
 Implicit conversion | _ctrl+Q_
 
-##### A server up and running
+### A server up and running
 
 Open the entry point of the application _swc.stocks.Server_. This object initializes an akka http server.
 
@@ -66,7 +66,7 @@ Before you jump into conclusions ask yourself __do we need to understand everyth
 We just need to __keep a high level perspective__ and __focus on the problem at hand__ in this case provide a rest API for our client.
 
 
-##### Creating the domain types 
+### Creating the domain types 
 The next step is to create some type that will represent our domain.
 For our simple scenario we need to represent only the concepts of user and stock.
 
@@ -85,7 +85,7 @@ case class User(id: Long, name: String)
 > Compare this with immutable java classes with equal and hash code function getters.
 We have done all of this with a simple line of code.
 
-#### Implenting a simple stock service
+### Implenting a simple stock service
 Next we will implement a simple stock service.
 The simple stock service is a high level service
 that corresponds one on one to the http api of the server.
@@ -119,10 +119,10 @@ when you do it?_
 Notice that the api describes the delay that of the hypothetical database event, 
 it has a return type of `Future[Seq[Stock]]`.
 
-##### Test the service layer
+### Test the service layer
 TODO...
 
-##### Creating rest api
+### Creating rest api
 
 We begin by replacing our routes definition. We are going to use akka Directives which is 
 a __DSL__ to create server http routes.
@@ -130,18 +130,18 @@ a __DSL__ to create server http routes.
 1) Create the `/stocks` route which returns all the available 
 
 
-##### Testing our api
+### Testing our API
 
 
-####PART 2
-##### Integrating database via slick 
+##PART 2
+### Integrating database via slick 
 
-##### What about transactions
+### What about transactions
 
-##### What about errors and validation
+### What about errors and validation
 
-##### Adding a front for fun
+### Adding a front for fun
 
-##### Resources
+### Resources
 
-##### More topics
+### More topics
