@@ -2,6 +2,7 @@ package swc.stocks
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
+import akka.http.scaladsl.marshalling.ToResponseMarshallable
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 
@@ -16,7 +17,7 @@ object Server extends App {
   private val interface = "localhost"
   private val port = 9191
 
-  val route: Route =  _.complete("Let's get started")
+  val route: Route =  _.complete(ToResponseMarshallable.apply("Let's get started"))
 
   val bindingFuture = Http().bindAndHandle(route, interface, port)
 
