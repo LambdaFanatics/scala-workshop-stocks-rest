@@ -24,13 +24,13 @@ Implicit conversion | _ctrl+Q_
 
 Open the entry point of the application _swc.stocks.Server_. This object initializes an akka http server.
 
-1) Let's Run the code and see the result.
+1) Run the code and see the result.
 
 > Hit _ctrl+shift+R_ to run the server and  open an browser at _http://localhost:9191/_ to make sure that everything works.
 
 As you can see the implementation is written straight in the body of the object without a main method.
 
-2) Where is the main? Let's find it.
+2) Where is `main`?
 
 > Navigate to the _App_ trait and make sure that a main exists.
 
@@ -85,24 +85,39 @@ case class User(id: Long, name: String)
 > Compare this with immutable java classes with equal and hash code function getters.
 We have done all of this with a simple line of code.
 
-#### Create our simple stock service
+#### Implenting a simple stock service
 Next we will implement a simple stock service.
 The simple stock service is a high level service
 that corresponds one on one to the http api of the server.
 
-1) Implement the method fetch stocks of the StockService.
+> Open the object file `swc.stocks.StockService`. 
 
-> Open the object file `swc.stocks.StockService`. The stub of the method to implement 
-already exists. Fill the implementation to return tree mock stocks ```AAA, BBB, CCC``` 
+The service object just holds some internal state to represent mock 
+stocks.
+`stocksRegistry` is a map from of all the available stocks indexed by.
+`stocksPerUser` is the assigned stocks per user.
+
+For now we intentionally ignore the database integration. We will mock the 
+results inside the service.
+
+1) Let's create some mock data.
+
+> Fill the `stocksRegistry` with three mock stocks `AAA, BBB, CCC`
+> Add a mock user with `User(1,"user")` to hold the stock `CCC`
+
+2) Implement the method `fetchStocks()`.
+
+> The stub of the method to implement already exists. 
 
 ```def fetchStocks() : Future[Seq[Stock]] = ???```
 
-For now we intentionally ignore the database effects. But notice that the api
-of the service is still valid the access to the database is effect with delay and 
-the return types of `Future[Seq[Stock]]` perfectly describes the result.
+> Fill the implementation to return all the available stocks of the registry. 
 
+> _Hint: You need to wrap the result to a future. Does the compiler complains
+when you do it?_ 
 
-
+Notice that the api describes the delay that of the hypothetical database event, 
+it has a return type of `Future[Seq[Stock]]`.
 
 ##### Test the service layer
 TODO...
@@ -124,7 +139,6 @@ a __DSL__ to create server http routes.
 ##### What about transactions
 
 ##### What about errors and validation
-
 
 ##### Adding a front for fun
 
