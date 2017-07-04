@@ -13,6 +13,7 @@ As a demo case ...
 
 action | Mac | Linux
 ---  | :---: | ---
+Show intention actions & quick fixes | _alt+Enter_
 Type info | _ctrl+shift+P_ |
 Parameter info | _cmd+P_ |
 Run main| _ctrl+shift+R_
@@ -49,7 +50,7 @@ key components of the akka library.
 > Let's delete the implicit keyword at the _executionContext_ declaration. What is happening?
 
 The line 
-```val route: Route =  _.complete("Let's get started")```
+```val routes: Route =  _.complete("Let's get started")```
 creates a route that is used for initializing the server.
 
 5) Why is so cryptic? Can we write it more explicitly. Why is the string underlined by the IDE?
@@ -61,18 +62,69 @@ creates a route that is used for initializing the server.
 It is already obvious that a lot of syntactic sugar and compilation time stuff are going on. Even with the help  of the IDE things seem to be too complex.
 Before you jump into conclusions ask yourself __do we need to understand everything in order to create our application ?__
 
-
 > We claim that the **answer is NO**. The __goal__ of this workshop apart from a hands on introduction is to __prove that we can use scala even without having vast prior  functional expertise__.
 We just need to __keep a high level perspective__ and __focus on the problem at hand__ in this case provide a rest API for our client.
 
 
 ##### Creating the domain types 
+The next step is to create some type that will represent our domain.
+For our simple scenario we need to represent only the concepts of user and stock.
+
+1) How we chose to represent the stock and the user?
+
+> Create two case classes `User` and `Stock` in package `swc.stocks.domain` to represent the domain.
+Not because like in OOP everything should be a class, but because we need to create 
+two new data types. In our case we need to create two scala _case class_ es.
+
+```
+case class Stock(code: String, description: String)
+
+case class User(id: Long, name: String)
+```
+
+> Compare this with immutable java classes with equal and hash code function getters.
+We have done all of this with a simple line of code.
+
+#### Create our simple stock service
+Next we will implement a simple stock service.
+The simple stock service is a high level service
+that corresponds one on one to the http api of the server.
+
+1) Implement the method fetch stocks of the StockService.
+
+> Open the object file `swc.stocks.StockService`. The stub of the method to implement 
+already exists. Fill the implementation to return tree mock stocks ```AAA, BBB, CCC``` 
+
+```def fetchStocks() : Future[Seq[Stock]] = ???```
+
+For now we intentionally ignore the database effects. But notice that the api
+of the service is still valid the access to the database is effect with delay and 
+the return types of `Future[Seq[Stock]]` perfectly describes the result.
+
+
+
+
+##### Test the service layer
+TODO...
 
 ##### Creating rest api
 
+We begin by replacing our routes definition. We are going to use akka Directives which is 
+a __DSL__ to create server http routes.
+
+1) Create the `/stocks` route which returns all the available 
+
+
 ##### Testing our api
 
-##### Integrating database via slick (Part 2)
+
+####PART 2
+##### Integrating database via slick 
+
+##### What about transactions
+
+##### What about errors and validation
+
 
 ##### Adding a front for fun
 
