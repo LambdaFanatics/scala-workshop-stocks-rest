@@ -5,9 +5,11 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 
+import akka.http.scaladsl.server.Directives._
+
 import scala.io.StdIn
 
-object Server extends App {
+object Server extends App with Marshaller{
 
   implicit val system = ActorSystem("StocksRest")
   implicit val materializer = ActorMaterializer()
@@ -16,7 +18,26 @@ object Server extends App {
   private val interface = "localhost"
   private val port = 9191
 
-  val routes: Route = _.complete("Let's get started")
+  val routes: Route =
+    path ("stocks") {
+      pathEndOrSingleSlash {
+        get {
+         complete(StockService.fetchStocks())
+        }
+      }
+    } ~ path("stocks" / "portfolio" / IntNumber) { id =>
+      get {
+        complete(StockService.fetchUserPortolio(id))
+      }
+    } ~ path("stocks" / "portfolio" / IntNumber / Remaining)  { (id, code) =>
+      put {
+        complete(StockService.addToUserPortfolio(id, code))
+      }
+    } ~ path("stocks" / "portfolio" / IntNumber/ Remaining) { (id, code) =>
+      delete {
+        complete(StockService.removeFromUserPortfolio(id, code))
+      }
+    }
 
   val bindingFuture = Http().bindAndHandle(routes, interface, port)
 
