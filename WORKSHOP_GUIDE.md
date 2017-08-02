@@ -8,19 +8,21 @@ As a demo case ...
 
 ## PART  1 
 ### Explaining project structure 
-* Build process SBT
+* Build process SBT _TODO..._
 * Idea scala support:
 
-action | Mac | Linux
+IDE Action | Mac | Linux
 ---  | :---: | ---
-Show intention actions & quick fixes | _alt+Enter_
-Type info | _ctrl+shift+P_ |
-Parameter info | _cmd+P_ |
-Run main| _ctrl+shift+R_
-Stop main | _cmd+F2_
-Implicit conversion | _ctrl+Q_
+Show intention actions & quick fixes | `alt+Enter`
+Type info | `ctrl+shift+P` |
+Parameter info | `cmd+P` |
+Find usages | `alt+F7` |
+Run main| `ctrl+shift+R` | 
+Stop main | `cmd+F2` |
+Implicit conversion | `ctrl+Q` |
+Implicit parameters | `cmd+shift+P` |
 
-### A server up and running
+### A server up and running !
 
 Open the entry point of the application _swc.stocks.Server_. This object initializes an akka http server.
 
@@ -58,7 +60,7 @@ creates a route that is used for initializing the server.
 > Let's use the IDE to write an equivalent more readable version of this line.
 
 
-It is already obvious that a lot of syntactic sugar and compilation time stuff are going on. Even with the help  of the IDE things seem to be too complex.
+It is already obvious that a lot of syntactic sugar and compilation time stuff is going on. Even with the help  of the IDE things seem to be too complex.
 Before you jump into conclusions ask yourself __do we need to understand everything in order to create our application ?__
 
 > We claim that the __answer is NO__. The __goal__ of this workshop apart from a hands on introduction is to __prove that we can use scala even without having vast prior  functional expertise__.
@@ -118,7 +120,7 @@ when you do it?_
 Notice that the method signature describes the delay of the hypothetical database event, 
 it has a return type of `Future[Seq[Stock]]`.
 
-3) Similarly with the above we can inmplement `fetchUserPortfolio()`.
+3) Similarly with the above we can implement `fetchUserPortfolio()`.
 
 > Implement the method, this time use the state value `stocksPerUser`.
 
@@ -128,7 +130,7 @@ declares operation delay but we don't care about the result value only about the
 
 4) Implement the method that adds a stock code to a user portfolio.
 >  The implementation of the method requires knowledge about scala collections.
-> `def addToUserPortfolio(userId: Long, code: String): Future[Done]`'
+> `def addToUserPortfolio(userId: Long, code: String): Future[Done]`
 >
 >  _Hint: You need to query if a user has already a portfolio list. If the portfolio exists then we should add the stock,
 > if not then we should create it first._ 
@@ -136,8 +138,30 @@ declares operation delay but we don't care about the result value only about the
 5) Similarly let's implement the method that removes a stock from a users portfolio.
 > Implement the method `removeUserStock`.
 
+Before we continue lets take a moment and concider about the method signatures.
+
+Compare this signature:
+`def fetchUserPortolio(userId: Long): Future[Seq[Stock]]` 
+
+With this:
+`def fetchUserPortolio(userId: Long): Seq[Stock]`
+ 
+Isn't it better to have the side effect of the method visible in the type. `Future[...]` denotes 
+that time latency (or error) may occur. In other words __the method signature explicitly states 
+about what side effect it uses__.  In the second case __only by examining the method body__ we 
+can be certain that the method is not pure. 
+
+6) Finally, all the methods of our service are __pure functions__ 
+can you tell why this is important.
+
 ### Test the service layer
-TODO...
+We have now an service layer which relies on internal in memory state. We don't know if it is operational yet.
+
+1) Should we wait until the creation of the http API in order to test if it works?
+
+> Of course not. Let's use scala testing mechanisms to test our service layer. 
+> Open file `swc.stocks.StockServiceSpec` and complete the tests based on the known implementation 
+> stock service.
 
 ### Creating rest api
 
@@ -160,9 +184,11 @@ a __DSL__ to create server http routes.
 
 ### You said something about Functional Programming?
 
+### Next steps
 
 ### Resources
 
-### More topics
+[Akka Documentation](http://akka.io/docs/)
 
-### Next steps
+[Programming in Scala: A Comprehensive Step-by-Step Guide, Third Edition](https://www.amazon.com/Programming-Scala-Comprehensive-Step-Step-ebook/dp/B01EX49FOU/ref=sr_1_sc_1?s=books&ie=UTF8&qid=1499325668&sr=1-1-spell&keywords=a+complrehensive+step-by-step+guide+3rd+edition)
+
