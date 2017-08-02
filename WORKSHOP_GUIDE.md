@@ -168,7 +168,10 @@ We have now an service layer which relies on internal in memory state. We don't 
 We begin by replacing our routes definition. We are going to use akka Directives which is 
 a __DSL__ to create server http routes.
 
-1) Create the `/stocks` route which returns all the available 
+1) Let's implement a route.
+
+>  Create the `/stocks` route which returns all the available stocks.
+
 
 ### Testing our API
 
@@ -190,5 +193,6 @@ a __DSL__ to create server http routes.
 
 [Akka Documentation](http://akka.io/docs/)
 
-[Programming in Scala: A Comprehensive Step-by-Step Guide, Third Edition](https://www.amazon.com/Programming-Scala-Comprehensive-Step-Step-ebook/dp/B01EX49FOU/ref=sr_1_sc_1?s=books&ie=UTF8&qid=1499325668&sr=1-1-spell&keywords=a+complrehensive+step-by-step+guide+3rd+edition)
+[Scalatest Documentation](http://www.scalatest.org/user_guide)
 
+[Programming in Scala: A Comprehensive Step-by-Step Guide, Third Edition](https://www.amazon.com/Programming-Scala-Comprehensive-Step-Step-ebook/dp/B01EX49FOU/ref=sr_1_sc_1?s=books&ie=UTF8&qid=1499325668&sr=1-1-spell&keywords=a+complrehensive+step-by-step+guide+3rd+edition)

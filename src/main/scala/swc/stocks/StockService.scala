@@ -28,7 +28,7 @@ object StockService {
   }
 
   // def fetchUserStocks(userId: Long): Future[Seq[Stock]] = ???
-  def fetchUserPortolio(userId: Long): Future[Seq[Stock]] = Future {
+  def fetchUserPortfolio(userId: Long): Future[Seq[Stock]] = Future {
      stocksPerUser.getOrElse(userId, Seq.empty)
   }
 
