@@ -202,6 +202,9 @@ This way we will be able to unit test the router api portion of the code.
 1) Let's separate the implementation of the http rest api routes.
 > Create a new __trait__ `StockRestApi` to separate the routes implementation.
 
+2) Now we should implement tests for each http rest api method.
+> Implement the body of all test methods in such a way that they invoke the correct http method
+> and test that the expected result is returned to the client.
 
 ##PART 2
 

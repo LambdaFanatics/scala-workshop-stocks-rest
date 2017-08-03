@@ -1,5 +1,6 @@
 package swc.stocks
 
+import akka.Done
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import akka.http.scaladsl.model.ContentTypes._
 import akka.http.scaladsl.model.StatusCodes._
@@ -26,11 +27,17 @@ class StocksRestApiSpec extends UnitSpec with ScalatestRouteTest with StockRestA
     }
 
     it("should respond to a user add stock query with with success") {
-      fail
+      Put(s"/stocks/portfolio/1/CCC") ~> routes ~> check {
+        status shouldBe OK
+        contentType shouldBe `text/plain(UTF-8)`
+      }
     }
 
     it("should respond to a user remove stock query with with success") {
-      fail
+      Delete(s"/stocks/portfolio/1/CCC") ~> routes ~> check {
+        status shouldBe OK
+        contentType shouldBe `text/plain(UTF-8)`
+      }
     }
   }
 }
