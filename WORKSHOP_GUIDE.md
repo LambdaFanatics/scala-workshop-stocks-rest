@@ -163,6 +163,13 @@ We have now an service layer which relies on internal in memory state. We don't 
 > Open file `swc.stocks.StockServiceSpec` and complete the tests based on the known implementation 
 > stock service.
 
+> Implement all the tests that fail in the StockServiceSpec using ScalaTest library.
+
+2) In the final test description `"methods add and remove from user portfolio"` how did you __compose__
+multiple calls of the stock service api? 
+
+> It's time to consider about composition and compare this method with other OOP languages like _java_.
+
 ### Creating rest api
 
 We begin by replacing our routes definition. We are going to use akka Directives which is 
@@ -170,9 +177,17 @@ a __DSL__ to create server http routes.
 
 1) Let's implement a route.
 
->  Create the `/stocks` route which returns all the available stocks.
+> Create the GET `/stocks` route which returns all the available stocks.
 
+2) In a similar way let's continue with user portfolio method
 
+> Create the GET `/stocks/portfolio/:id` route which returns all the user portfolio stocks.
+ 
+3) For the remaining two stocks service rest api method we should use PUT and DELETE http methods.
+
+> Create the PUT and DELETE `stocks/portfolio/:id/:code` routes which add and remove a stock to a user 
+> portfolio respectively.
+ 
 ### Testing our API
 
 ##PART 2
