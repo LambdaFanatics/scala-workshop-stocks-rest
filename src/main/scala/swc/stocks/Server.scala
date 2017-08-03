@@ -2,43 +2,41 @@ package swc.stocks
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 
 import scala.io.StdIn
 
-object Server extends App with Marshaller{
+object Server extends App with StockRestApi {
 
-  implicit val system = ActorSystem("StocksRest")
-  implicit val materializer = ActorMaterializer()
-  implicit val executionContext = system.dispatcher
+  override implicit val system = ActorSystem("StocksRest")
+  override implicit val materializer = ActorMaterializer()
+  override implicit val executor = system.dispatcher
 
   private val interface = "localhost"
   private val port = 9191
 //  val routes: Route = _.complete(ToResponseMarshallable.apply("Let's get started")(PredefinedToResponseMarshallers.liftMarshaller(PredefinedToEntityMarshallers.StringMarshaller)))
-//  val routes: Route = _ .complete("Let's get started")
+//  val routes: Route = _.complete("Let's get started")
 
-  val routes: Route =
-    path ("stocks") {
-      pathEndOrSingleSlash {
-        get {
-         complete(StockService.fetchStocks())
-        }
-      }
-    } ~ path("stocks" / "portfolio" / IntNumber) { id =>
-      get {
-        complete(StockService.fetchUserPortfolio(id))
-      }
-    } ~ path("stocks" / "portfolio" / IntNumber / Remaining)  { (id, code) =>
-      put {
-        complete(StockService.addToUserPortfolio(id, code))
-      }
-    } ~ path("stocks" / "portfolio" / IntNumber/ Remaining) { (id, code) =>
-      delete {
-        complete(StockService.removeFromUserPortfolio(id, code))
-      }
-    }
+//  val routes: Route =
+//    path ("stocks") {
+//      pathEndOrSingleSlash {
+//        get {
+//         complete(StockService.fetchStocks())
+//        }
+//      }
+//    } ~ path("stocks" / "portfolio" / IntNumber) { id =>
+//      get {
+//        complete(StockService.fetchUserPortfolio(id))
+//      }
+//    } ~ path("stocks" / "portfolio" / IntNumber / Remaining)  { (id, code) =>
+//      put {
+//        complete(StockService.addToUserPortfolio(id, code))
+//      }
+//    } ~ path("stocks" / "portfolio" / IntNumber/ Remaining) { (id, code) =>
+//      delete {
+//        complete(StockService.removeFromUserPortfolio(id, code))
+//      }
+//    }
 
   val bindingFuture = Http().bindAndHandle(routes, interface, port)
 

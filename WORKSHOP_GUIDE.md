@@ -188,7 +188,20 @@ a __DSL__ to create server http routes.
 > Create the PUT and DELETE `stocks/portfolio/:id/:code` routes which add and remove a stock to a user 
 > portfolio respectively.
  
-### Testing our API
+### Testing our Rest API
+
+Using a web client _[postman?]_ we can test our rest api to see if it works. But it would be nice to 
+automate test one level higher emulating actual http calls. In our case this may seem trivial
+and unnecessary because of the one to one correspondence with the service api calls. In real 
+life applications where a route implementation may be composed by many lower level services this 
+higher layer testing is needed.
+
+Before we continue we need to separate the implementation of the server (main method) and the rest api routes.
+This way we will be able to unit test the router api portion of the code.
+
+1) Let's separate the implementation of the http rest api routes.
+> Create a new __trait__ `StockRestApi` to separate the routes implementation.
+
 
 ##PART 2
 
