@@ -7,6 +7,8 @@ Follow the instructions of the README file to prepare your environment.
 As a demo case ...
 
 ## PART  1 
+In the first part ... __TODO__
+
 ### Explaining project structure 
 * Build process SBT _TODO..._
 * Idea scala support:
@@ -203,10 +205,21 @@ This way we will be able to unit test the router api portion of the code.
 > Create a new __trait__ `StockRestApi` to separate the routes implementation.
 
 2) Now we should implement tests for each http rest api method.
-> Implement the body of all test methods in such a way that they invoke the correct http method
+> Implement the body of all the test methods in such a way that they invoke the correct http method
 > and test that the expected result is returned to the client.
 
 ##PART 2
+In this part of the workshop we will extend the existing application with a database. 
+That is we will use a postgres database instance, connect to it and update our model to store and
+retrieve data via the database.
+
+We use docker-compose to install and run a postgres instance and initialize the database schema with data.
+
+_Note:_ In a real life application the database schema will involve along side the application and a proper
+migration library may be used like `flyway`.
+
+1) First we need to initialize the postgres database.
+
 
 ### Integrating database via slick 
 
