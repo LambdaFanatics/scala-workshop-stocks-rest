@@ -1,9 +1,9 @@
 INSERT INTO users (id,name)
     VALUES
-    (1, 'fpas@accepted.gr'),
-    (2, 'smyrn@accepted.gr'),
-    (3, 'iroza@accepted.gr'),
-    (4, 'gpapag@accepted.gr');
+    (1, 'fp@someinc.com'),
+    (2, 'gs@someinc.gr'),
+    (3, 'iz@someinc.gr'),
+    (4, 'gp@someinc.gr');
 
 INSERT INTO stocks (code, description)
     VALUES
