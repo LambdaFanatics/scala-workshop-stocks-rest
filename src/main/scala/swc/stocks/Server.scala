@@ -19,6 +19,7 @@ object Server extends App with StockRestApi {
 
 //  val routes: Route =
 //    path ("stocks") {
+//    path ("stocks") {
 //      pathEndOrSingleSlash {
 //        get {
 //         complete(StockService.fetchStocks())

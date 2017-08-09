@@ -4,7 +4,7 @@
 Follow the instructions of the README file to prepare your environment.
 
 ## What are we implementing? 
-As a demo case ...
+As a demo case ... __TODO__
 
 ## PART  1 
 In the first part ... __TODO__
@@ -88,7 +88,7 @@ case class User(id: Long, name: String)
 > Compare this with immutable java classes with equal and hash code function getters.
 We have done all of this with a simple line of code.
 
-### Implenting a simple stock service
+### Implementing a simple stock service
 Next we will implement a simple stock service.
 The simple stock service is a high level service
 that corresponds one on one to the http api of the server.
@@ -156,7 +156,7 @@ can be certain that the method is not pure.
 6) Finally, all the methods of our service are __pure functions__ 
 can you tell why this is important.
 
-### Test the service layer
+### Testing the service layer
 We have now an service layer which relies on internal in memory state. We don't know if it is operational yet.
 
 1) Should we wait until the creation of the http API in order to test if it works?
@@ -172,7 +172,7 @@ multiple calls of the stock service api?
 
 > It's time to consider about composition and compare this method with other OOP languages like _java_.
 
-### Creating rest api
+### Creating the Rest API
 
 We begin by replacing our routes definition. We are going to use akka Directives which is 
 a __DSL__ to create server http routes.
@@ -209,6 +209,7 @@ This way we will be able to unit test the router api portion of the code.
 > and test that the expected result is returned to the client.
 
 ##PART 2
+
 In this part of the workshop we will extend the existing application with a database. 
 That is we will use a postgres database instance, connect to it and update our model to store and
 retrieve data via the database.

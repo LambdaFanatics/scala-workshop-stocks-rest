@@ -4,6 +4,9 @@ services:
   db:
     container_name: scala-workshop-postgres
     image: postgres:9.4
+    volumes:
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/1-init.sql
+      - ./scripts/data.sql:/docker-entrypoint-initdb.d/2-data.sql
     ports:
       - "5432:5432"
     environment:
