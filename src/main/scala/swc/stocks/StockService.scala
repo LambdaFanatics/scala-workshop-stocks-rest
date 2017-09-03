@@ -22,7 +22,7 @@ object StockService {
 
   import scala.concurrent.ExecutionContext.Implicits.global
 
-  // def fetchStocks() : Future[Seq[Stock]] = ???
+//   def fetchStocks() : Future[Seq[Stock]] = ???
   def fetchStocks(): Future[Seq[Stock]] = Future {
     stocksRegistry.values.toList
   }

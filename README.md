@@ -12,6 +12,8 @@ participate or run the workshop examples.
 * [Docker](https://www.docker.com/)
 
 ### Installation
+### Warm up instructions
+
 ## Download
 ## Dependencies
 ## Postman

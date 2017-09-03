@@ -228,7 +228,7 @@ migration library may be used like `flyway`.
 
 ### What about errors and validation
 
-### Adding a front for fun
+### Adding a front application for fun
 
 ### You said something about Functional Programming?
 
