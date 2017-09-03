@@ -1,12 +1,12 @@
 
-## Functional programming & Scala
-### Why bother?
+### Functional programming & Scala
+#### Why bother?
 
 _Fotis Paschos, @fpaschos_
 
 
 #HSLIDE
-## Outline
+### Outline
  - Introduction.
  - Some critical questions.
  - Answering
@@ -19,10 +19,10 @@ _Fotis Paschos, @fpaschos_
  
 
 #HSLIDE
-## Introduction
+### Introduction
 
 #VSLIDE
-### About me
+#### About me
  My name is Fotis Paschos.
  I live in Greece.
  
@@ -38,15 +38,14 @@ _Fotis Paschos, @fpaschos_
  [Company]()
  
 #VSLIDE
-### Why am I here?
-
+#### Why am I here?
 Because ever since I started developing production software I had a feeling that 
 I am doing something wrong.
 
 That I was lacking something that would help me to tame each problems complexity.
 
 #VSLIDE
-### Disclaimer
+#### Disclaimer
 All the presented material, thoughts, opinions etc. are __subjective__. 
  
 They reflect my __own__ strive and __learning path__ towards means __to implement better software__.
@@ -55,37 +54,34 @@ My goal is to share my findings and discuss about them.
  
 #### This presentation is ONLY about designing and implementing better software  AND NOTHING MORE.  
  
-
 #VSLIDE
-### Special thanks
+#### Special thanks
 
 #HSLIDE
 ### Some critical questions.
  - Why functional programming?
  - Why functional programming today?
- - What is functional programming? Is it hard?
+ - What is functional programming? 
+ - Is it hard?
  - So what is functional programming?
  - Why scala?
 
-
- 
-
 #HSLIDE
-## Why functional programming?
-We need functional programming as a tool in order to develop software that:
+### Why functional programming?
+We need tools to develop software that:
 
-is closer to the way our mind works
+* is closer to the way our mind works
 
-models problems using high level abstractions
+* models problems using high level abstractions.
 
-promotes composability
+* promotes composability (= reusability)
 
-uses more denotational than operational semantics
+* uses more denotational than operational semantics
  
 #### In other words makes our developer lives easier...
 
 #VSLIDE
-### Denotational WHAT???
+#### Denotational WHAT???
 
 #VSLIDE
 #### Example program 1
@@ -146,26 +142,35 @@ __The second program is using a pure functional approach.__
 #### Conclusion
 Denotational semantics may seem strange but are closer to the way we think.
 
-That means that is easier for us to infer the execution result of program.
+That means that is easier for us to infer the execution result of the program.
 
-Moreover, they are more precise.
+Moreover, they are more precise and terse.
 
 __Denotational semantics describe a problem in a higher level of abstraction 
 and leave the compiler do the hard work for us.__
 
 BTW: The second program is written in haskell.
 
+#VSLIDE
 #### Some more rhetorical questions.
-If we were meaning simple function composition. Why java forces us to use classes?
+* If we were meaning simple function composition. Why java forces us to use classes?
 
-Functions must be parts of objects?
+* Functions must be parts of objects?
 
-What exactly do the objects model?
+* What exactly do the objects model?
 
-If we need to compose a third function h of type (int -> String) how would our 
-programs be altered?
+* If we need to compose a third function h of type _(int -> String)_ how would our 
+programs would be altered?
 
 #HSLIDE
+#### Why scala?
+* It is a multiparadigm language.
+* It runs on the JVM.
+* It is strongly typed.
+* It is mature and production ready.
+* It has very good IDE support.
+* It has (IMHO) a better ecosystem in mentality and actual tools.
+* It is (IMHO) the closest reasonable thing that we have to haskell :) 
 
 ####Thank you!
 
