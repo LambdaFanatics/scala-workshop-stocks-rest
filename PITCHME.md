@@ -1,5 +1,5 @@
 
-## Functional programming with scala
+## Functional programming & Scala
 ### Why bother?
 
 _Fotis Paschos, @fpaschos_
@@ -8,8 +8,15 @@ _Fotis Paschos, @fpaschos_
 #HSLIDE
 ## Outline
  - Introduction.
- - Disclaimers.
- - 
+ - Some critical questions.
+ - Answering
+    * Why functional programming ?
+    * Why scala ?
+    * Why functional programming today ?
+    
+ - Concusion
+ - Q & A 
+ 
 
 #HSLIDE
 ## Introduction
@@ -79,8 +86,9 @@ uses more denotational than operational semantics
 
 #VSLIDE
 ### Denotational WHAT???
-Example
 
+#VSLIDE
+#### Example program 1
 This is a program that composes two methods in an OOP like language (in this case java).
 
 ```
@@ -106,9 +114,8 @@ class Main{
 ```
 
 #VSLIDE
-### Example continue ...
-Ok, that was trivial. Java does its jobs but what where we thinking while modeling 
-the problem.
+#### Example program 2
+That was trivial, but what we were trying to do in the first place ? 
 
 ```
 -- In a more mathematical notation
@@ -127,35 +134,39 @@ gof 1
 ```
 
 #VSLIDE
-### Comparison
+#### Comparison
+- The first program describes the operations that the compiler must do in order to execute the functions.
+- The second describes the meaning of the expressions of the language (just like in mathematics).
 
-Let's forget for a moment the amount of code written.
-
-- It describes the meaning of the expressions of the language (just like in mathematics)
-
-- The first example describes the operations that the compiler should do in order to execute the functions.
-
-#### The programs are equivalent but solve the problem using different tools.
-#### The second program is using a pure functional approach.
+__The programs are equivalent but solve the problem using different tools.__
+__The second program is using a pure functional approach.__
 
 #VSLIDE
 
-### Conclusion
+#### Conclusion
 Denotational semantics may seem strange but are closer to the way we think.
 
 That means that is easier for us to infer the execution result of program.
 
 Moreover, they are more precise.
 
-### Denotational semantics desctibe a problem in a higher level and leave the compiler do the hard work for us.
+__Denotational semantics describe a problem in a higher level of abstraction 
+and leave the compiler do the hard work for us.__
 
 BTW: The second program is written in haskell.
 
+#### Some more rhetorical questions.
+If we were meaning simple function composition. Why java forces us to use classes?
 
+Functions must be parts of objects?
 
+What exactly do the objects model?
 
+If we need to compose a third function h of type (int -> String) how would our 
+programs be altered?
 
+#HSLIDE
 
+####Thank you!
 
----
-The end
+__Q & A__
