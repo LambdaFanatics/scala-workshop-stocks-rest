@@ -1,72 +1,64 @@
----
-# Functional programming... Why bother?
 
----
-# Outline
+## Functional programming with scala
+### Why bother?
+
+_Fotis Paschos, @fpaschos_
+
+
+#HSLIDE
+## Outline
  - Introduction.
- - Some critical questions.
  - Disclaimers.
  - 
 
----
-# Introduction
-+++
+#HSLIDE
+## Introduction
 
-## About me
+#VSLIDE
+### About me
  My name is Fotis Paschos.
- 
  I live in Greece.
  
- I have been full stack software engineer for the last 9 years.
+ I have been a full stack software engineer for the past 9 years.
  
- My fields of specialty are:
+ The project that i have been involved were about:
  - JVM back end stacks.
  - RDBMs and No SQL storage systems.
- - Frond end libraries like Angular React etc.
+ - Frond end libraries like Angular, React etc.
  
- [LinkedIn]()
+ [LinkedIn]() |
+ [Github]() |
+ [Company]()
  
- [Github]()
- 
-+++
-
-## Why am I here?
+#VSLIDE
+### Why am I here?
 
 Because ever since I started developing production software I had a feeling that 
 I am doing something wrong.
 
 That I was lacking something that would help me to tame each problems complexity.
 
-+++
-
-## Disclaimer
- - All the presented material, thoughts, opinions etc. are __subjective__. 
- - They reflect my __own__ strive and __learning path__ towards means __to implement better software__.
- - My goal is to share my findings and discuss about them.
+#VSLIDE
+### Disclaimer
+ All the presented material, thoughts, opinions etc. are __subjective__. 
  
- ~~~
- This presentation is ONLY about designing and implementing better softaware 
- AND NOTHING MORE.  
- ~~~
-
-+++
-
-# Introduction
-
-
-
-## Special thanks
-+++
-
-
-
-
-
+ They reflect my __own__ strive and __learning path__ towards means __to implement better software__.
  
----
+ My goal is to share my findings and discuss about them.
+ 
+ #### This presentation is ONLY about designing and implementing better software  AND NOTHING MORE.  
+ 
+
+#VSLIDE
+### Special thanks
+
+
+#HSLIDE
 Some critical questions.
- - Why functional programming.
- - Why 
+ - Why functional programming?
+ - Why scala?
+ - Why functional programming today?
+ 
 
 
 
