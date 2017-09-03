@@ -55,10 +55,12 @@ My goal is to share my findings and discuss about them.
 #HSLIDE
 ### Some critical questions.
  - Why functional programming?
- - So what is functional programming?
  - Why functional programming today?
- - Why scala?
  - What is functional programming? Is it hard?
+ - So what is functional programming?
+ - Why scala?
+
+
  
 
 #HSLIDE
