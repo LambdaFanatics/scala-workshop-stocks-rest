@@ -13,9 +13,14 @@ _Fotis Paschos, @fpaschos_
     * Why functional programming ?
     * Why scala ?
     * Why functional programming today ?
-    
- - Concusion
+    * So what is functional programming?
+    * Is it hard?   
+ - Conclusion
+ - So now what? 
+ - Resources and material
  - Q & A 
+
+
  
 
 #HSLIDE
