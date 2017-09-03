@@ -13,7 +13,6 @@ participate or run the workshop examples.
 
 ### Installation
 ### Warm up instructions
-
 ## Download
 ## Dependencies
 ## Postman
