@@ -77,7 +77,7 @@ uses more denotational than operational semantics
  
 #### In other words makes our developer lives easier...
 
-#VSLILDE
+#VSLIDE
 ### Denotational WHAT???
 Example
 
@@ -118,7 +118,7 @@ f x = x + 1
 
 g x = x * 2
 
--- Define composition (g . f = g o f in the mathematical sense)
+-- Define composition (g . f = g o f)
 gof = g.f 
 
 -- Executing
@@ -127,18 +127,16 @@ gof 1
 ```
 
 #VSLIDE
-### Example comparison
+### Comparison
 
-Let's forget for a moment the amount of code written ...
-
-- The second example has an major advantage in comparison to the first.
+Let's forget for a moment the amount of code written.
 
 - It describes the meaning of the expressions of the language (just like in mathematics)
 
 - The first example describes the operations that the compiler should do in order to execute the functions.
 
 #### The programs are equivalent but solve the problem using different tools.
-#### The second program is using pure functional approch.
+#### The second program is using a pure functional approach.
 
 #VSLIDE
 
