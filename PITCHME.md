@@ -14,7 +14,9 @@ _Fotis Paschos, @fpaschos_
     * Why scala ?
     * Why functional programming today ?
     * So what is functional programming?
-    * Is it hard?   
+    * Is it hard?
+    
+#HVSLIDE   
  - Conclusion
  - So now what? 
  - Resources and material
@@ -177,6 +179,7 @@ programs would be altered?
 * It has (IMHO) a better ecosystem in mentality and actual tools.
 * It is (IMHO) the closest reasonable thing that we have to haskell :) 
 
+#HSLIDE
 ####Thank you!
 
 __Q & A__
